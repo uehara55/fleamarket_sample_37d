@@ -20,7 +20,29 @@
       %h2.pickUpCategory ピックアップ  カテゴリー
       %section.itemsBoxContainer
         %h3.textCenter
-          %a レディース　新着アイテム
+          =link_to "レディース  新着アイテム", "#"
+        .itemsBoxContents
+          - @ladies_items.each do |item|
+            = render partial: "items", locals: {item: item}
+        .viewAll
+          =link_to "すべての商品を見る", "#"
+        %h3.textCenter
+          =link_to "メンズ  新着アイテム", "#"
+        .itemsBoxContents
+          - @mens_items.each do |item|
+            = render partial: "items", locals: {item: item}
+        .viewAll
+          =link_to "すべての商品を見る", "#"
+        %h3.textCenter
+          =link_to "シャネル  新着アイテム", "#"
+        .itemsBoxContents
+          - @chanels.each do |item|
+            = render partial: "items", locals: {item: item}
+        .viewAll
+          =link_to "すべての商品を見る", "#"
+      %section.itemsBoxContainer
+        %h3.textCenter
+          %a レディース  新着アイテム
         .itemsBoxContents
           %section.item-box
             %a
