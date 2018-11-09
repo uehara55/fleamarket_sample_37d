@@ -1,0 +1,15 @@
+%section.item-box
+  %a
+    %figure.item-box__photo
+      %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m70326505285_1.jpg?1539625024"}
+    .item-box__content
+      %h3.item-box__content__name
+        = item.name
+      .item-box__content__num.clearfix
+        .item-box__content__num-price
+          = item.price
+        .item-box__content__num-likes
+          %i.far.fa-heart.icon
+          %span 17
+      %p.item-box__content__num-tax
+        (税込)

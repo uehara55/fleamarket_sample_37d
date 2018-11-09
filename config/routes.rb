@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-   devise_for :users, :controllers => {
+  devise_for :users, :controllers => {
     :registrations => 'devise_users/registrations'
    }
+  root 'items#index'
 
   resources :addresses,only: [:new,:create]
   resources :users, only: :show
   resources :items
 
-  root 'items#index'
   get   'address/new' => 'addresses#new'
   get   'users/sign_up/2'  =>  'users#telephone_registration'
   get   'users/sign_up/3'  =>  'users#phone_authentication'
