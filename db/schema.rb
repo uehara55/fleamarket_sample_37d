@@ -57,12 +57,12 @@ ActiveRecord::Schema.define(version: 20181112095350) do
     t.integer "expense", null: false
     t.integer "shipping_method", null: false
     t.integer "arrival_date", null: false
-    t.integer "like_count"
+    t.integer "like_count", null: false
     t.integer "L_category_id", null: false
     t.integer "M_category_id", null: false
-    t.integer "S_category_id"
-    t.integer "size_id"
-    t.integer "brand_id"
+    t.integer "S_category_id", null: false
+    t.integer "size_id", null: false
+    t.integer "brand_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_items_on_name"

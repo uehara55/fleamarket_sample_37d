@@ -26,8 +26,8 @@
             .form-group-registration
               %form#charge-form{:action => "/pay", :method => "POST"}
                 %span.charge-errors
-              = form_tag(action: :payment, method: :post) do
-                %script.payjp-button{"data-key" => PAYJP_PUBLIC_KEY, :src => "https://checkout.pay.jp", :type => "text/javascript","data-text" => "クレジットカードの登録をする"}
+              = form_tag payment_items_path do
+                %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript","data-text" => "クレジットカードの登録をする"}
             .form-group-registration
               %a{:href => "/users/sign_up/6"}
                 %button.btn-default.btn-red{type: "submit"} 次へ進む

@@ -57,12 +57,45 @@ $(function(){
   });
 });
 
-$(function() {
-  var nav = $('.nav');
-  $('li', nav).mouseover(function(e) {
-  $('ul', this).stop().slideDown('fast');
-  })
-  .mouseout(function(e) {
-  $('ul', this).stop().slideUp('fast');
+// 以下カテゴリーのjavascript
+
+$(function(){
+    $(".nav__goods").on("click",function(){
+      $(".pulldownmenu").stop().slideDown();
+
+    $(".nav__goods").on("click",function(){
+      $(".pulldownmenu").stop().slideUp();
+    });
+  });
+});
+
+
+$(function(){
+    $(".pc-header-nav-parent-ledies").mouseover(function(){
+      $(".pc-header-nav-child-ledies").stop().slideDown();
+
+      $(".pc-header-nav-parent-ledies").mouseout(function(){
+      $(".pc-header-nav-child-ledies").stop().slideUp();
+    });
+  });
+});
+
+
+
+$(function(){
+    $(".pc-header-nav-parent-mens").mouseover(function(){
+      $(".pc-header-nav-child-mens").stop().slideDown();
+      $(".pc-header-nav-parent-mens").mouseout(function(e){
+      $(".pc-header-nav-child-mens").stop().slideUp();
+    });
+  });
+});
+
+$(function(){
+    $(".pc-header-nav-parent-baby").mouseover(function(){
+      $(".pc-header-nav-child-baby").stop().slideDown();
+      $(".pc-header-nav-parent-baby").mouseout(function(e){
+      $(".pc-header-nav-child-baby").stop().slideUp();
+    });
   });
 });
