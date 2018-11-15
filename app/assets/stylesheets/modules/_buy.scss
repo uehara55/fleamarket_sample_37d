@@ -28,7 +28,7 @@ main.single-main{
         font-size: 16px;
         line-height: 1.5;
       }
-      form.buy-form{
+      .buy-form{
         p.buy-price{
           margin: 8px 0 0;
           line-height: 1.5;
@@ -54,7 +54,6 @@ main.single-main{
           }
         }
         ul.buy-price-table{
-          display: table;
           border-collapse: collapse;
           width: 100%;
           list-style: none;
@@ -62,18 +61,28 @@ main.single-main{
             border: 0;
           }
           li.buy-price-row{
+            width: 320px;
             display: table-row;
             border-top: 1px solid #ccc;
             .buy-price-cell:first-child{
               text-align: left;
+              float: left;
             }
             .buy-price-cell{
               display: table-cell;
               padding: 16px 0;
               text-align: right;
+              float: right;
+              width: 160px;
               span{
                 font-size: 25px;
               }
+            }
+          }
+         form{
+            button.btn-default.btn-red{
+              width: 320px;
+              margin: 0 auto;
             }
           }
         }

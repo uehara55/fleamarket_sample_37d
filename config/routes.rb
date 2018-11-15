@@ -13,15 +13,15 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get 'buy'
+      get '/buy/:id', to: 'items#buy'
     end
     collection do
       get 'method_of_payment'
       post 'payment'
     end
+    # resources :deals, only: [:create]
+    post '/deals' => 'deals#create'
   end
   root 'items#index'
   get   'users/sign_up/6'  =>  'users#registration_completion'
-
-
-
 end

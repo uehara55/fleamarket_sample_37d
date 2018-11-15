@@ -5,12 +5,15 @@
     %section.buy-content.buy-item
       .buy-content-inner
         %h3.buy-item-image
-          %img.lazyloaded.is-higher-width{alt: "", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m11759556552_1.jpg?1539773869"}
-        %p.buy-item-name.bold 週末だけSALE！女の子 スカート
-        %form.buy-form{action: "https://www.mercari.com/jp/transaction/buy/done/m11759556552/", method: "POST", novalidate: "novalidate"}
+          = image_tag @image.image_url, size: "148x148", class: "lazyloaded is-higher-width"
+        %p.buy-item-name.bold
+          = @item.name
+        .buy-form
           %p.buy-price.bold
-            ¥ 750
-            %span.item-shipping-fee.bold 送料込み
+            ￥
+            = @item.price
+            %span.item-shipping-fee.bold
+              = @item.expense
           %ul.buy-accordion.not-have
             %li
               .accordion-toggle
@@ -19,9 +22,13 @@
             %li.buy-price-row.buy-you-pay.bold
               .buy-price-cell 支払い金額
               .buy-price-cell
-                %span ¥ 750
-          %button.btn-default.btn-red.bold{type: "submit"} 購入する
-          %input#is_yuu_yuu_mercari_bin{type: "hidden"}/
+                %span
+                  ￥
+                  = @item.price
+            = form_tag("/items/#{@item.id}/deals", method: :post) do
+              = button_tag"購入する", data: {type: "submit"}, class: "btn-default btn-red bold"
+
+
     %section.buy-content.buy-user-info
       .buy-content-inner
         %h3 配送先

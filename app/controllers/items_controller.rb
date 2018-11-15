@@ -21,13 +21,20 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       redirect_to new_item_path
-    # current_user.products.create(create_params)
     end
 
   end
 
   def buy
+    if user_signed_in?
+      @item = Item.find(params[:id])
+      @image = @item.images.first
+    else
+      redirect_to new_user_session_path
+    end
+  end
 
+  def test
   end
 
   def payment
